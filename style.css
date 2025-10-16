@@ -1,0 +1,262 @@
+ /* Reset dasar dan styling body */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #4a6572);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        /* Container utama untuk card */
+        .profile-card {
+            background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+            width: 350px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        /* Efek hover pada card */
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Animasi garis berkilau */
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #3498db, transparent);
+            transition: left 0.5s;
+        }
+        
+        .profile-card:hover::before {
+            left: 100%;
+        }
+        
+        /* Header card dengan foto profil */
+        .card-header {
+            background: linear-gradient(135deg, #113163, #3498db);
+            padding: 30px 20px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to bottom right, transparent 49%, white 50%);
+        }
+        
+        .profile-img-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            padding: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+        
+        .profile-card:hover .profile-img-container {
+            transform: scale(1.05);
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-img-container:hover .profile-img {
+            transform: scale(1.1);
+        }
+        
+        /* Bagian isi card */
+        .card-body {
+            padding: 30px 25px;
+        }
+        
+        /* Nama profil */
+        .profile-name {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        /* Jabatan/profesi */
+        .profile-title {
+            margin: 0;
+            color: #3498db;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        /* Deskripsi profil */
+        .profile-description {
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 15px;
+            padding: 0 10px;
+        }
+        
+        /* Container untuk informasi kontak */
+        .contact-info {
+            background-color: #f1f8ff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-info:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+        }
+        
+        /* Judul bagian kontak */
+        .contact-title {
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Daftar informasi kontak */
+        .contact-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .contact-list li {
+            margin-bottom: 10px;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+        
+        .contact-list li:hover {
+            color: #3498db;
+        }
+        
+        .contact-list li:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Footer card */
+        .card-footer {
+            background: linear-gradient(135deg, #113163, #3498db);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .social-link:hover::before {
+            left: 100%;
+        }
+        
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Animasi untuk ikon media sosial */
+        .social-link i {
+            transition: transform 0.3s ease;
+        }
+        
+        .social-link:hover i {
+            transform: scale(1.2);
+        }
+        
+        /* Responsif untuk perangkat kecil */
+        @media (max-width: 480px) {
+            .profile-card {
+                width: 90%;
+                max-width: 320px;
+            }
+            
+            .card-body {
+                padding: 25px 20px;
+            }
+            
+            .profile-name {
+                font-size: 24px;
+            }
+            
+            .profile-title {
+                font-size: 16px;
+            }
+        }
